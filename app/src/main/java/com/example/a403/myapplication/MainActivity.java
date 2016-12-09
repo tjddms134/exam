@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText e1, e2, e3;
     RadioButton radio1, radio2, radio3, radio4, radio5;
     ImageView img;
-    LinearLayout linear1, linear2;
+    LinearLayout linear1;
     double num11, num22, num33, result, dcreslut, price;
     TextView t1, t2, t3;
     TimePicker time;
@@ -47,17 +47,15 @@ public class MainActivity extends AppCompatActivity {
         radio1 = (RadioButton) findViewById(R.id.radioButton6);
         radio2 = (RadioButton) findViewById(R.id.radioButton7);
         radio3 = (RadioButton) findViewById(R.id.radioButton8);
-        radio4 = (RadioButton) findViewById(R.id.radioButton10);
-        radio5 = (RadioButton) findViewById(R.id.radioButton11);
+
         img = (ImageView) findViewById(R.id.imageView2);
         e1 = (EditText) findViewById(R.id.editText);
         e2 = (EditText) findViewById(R.id.editText2);
         e3 = (EditText) findViewById(R.id.editText3);
         switch1 = (Switch) findViewById(R.id.switch1);
         linear1 = (LinearLayout) findViewById(R.id.linear1);
-        linear2 = (LinearLayout) findViewById(R.id.linear2);
-        time = (TimePicker) findViewById(R.id.timePicker2);
-        date = (CalendarView) findViewById(R.id.calendarView2);
+
+
 
         switch1.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
 
@@ -99,36 +97,14 @@ public class MainActivity extends AppCompatActivity {
 
 
                 t1.setText("num: " + result);
-                t2.setText("dcresult: ");
-                t3.setText("price :");
+                t2.setText("dcresult: "+result);
+                t3.setText("price :"+result);
 
             }
         });
 
 
-        b3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                linear2.setVisibility(View.VISIBLE);
-            }
-        });
 
-        radio4.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                time.setVisibility(View.INVISIBLE);
-                date.setVisibility(View.VISIBLE);
-            }
-        });
-
-        radio5.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                time.setVisibility(View.VISIBLE);
-                date.setVisibility(View.INVISIBLE);
-            }
-        });
 
 
     }
